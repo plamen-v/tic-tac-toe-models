@@ -1,6 +1,6 @@
 package requests
 
-import "github.com/plamen-v/tic-tac-toe/src/models"
+import "github.com/plamen-v/tic-tac-toe-models/models"
 
 type GetOpenRoomsRequest struct {
 	Host        string           `json:"host"`
