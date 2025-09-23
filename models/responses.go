@@ -3,5 +3,5 @@ package models
 type Response struct {
 	StatusCode int           `json:"statusCode"`
 	Error      *ErrorMessage `json:"error"`
-	Payload    interface{}   `json:"payload"`
+	Payload    interface{}   `json:"d"`
 }

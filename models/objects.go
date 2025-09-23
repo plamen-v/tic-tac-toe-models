@@ -6,6 +6,7 @@ type Player struct {
 	Password string      `json:"-"`
 	Nickname string      `json:"nickname"`
 	Stats    PlayerStats `json:"stats"`
+	RoomID   *int64      `json:"roomId"`
 }
 
 type PlayerStats struct {
@@ -28,14 +29,12 @@ type RoomParticipant struct {
 }
 
 type Room struct {
-	ID     int64            `json:"id"`
-	Host   RoomParticipant  `json:"host"`
-	Guest  *RoomParticipant `json:"guest"`
-	GameID *int64           `json:"gameId"`
-	// PrevGameID  *int64           `json:"prevGameId"` todo!
-	Title       string    `json:"title"`
-	Description string    `json:"description"`
-	Phase       RoomPhase `json:"phase"`
+	Host        RoomParticipant  `json:"host"`
+	Guest       *RoomParticipant `json:"guest"`
+	GameID      *int64           `json:"gameId"`
+	Title       string           `json:"title"`
+	Description string           `json:"description"`
+	Phase       RoomPhase        `json:"phase"`
 }
 
 type GamePhase int
