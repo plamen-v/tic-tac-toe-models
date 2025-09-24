@@ -11,8 +11,5 @@ type CreateRoomRequest struct {
 }
 
 type GetOpenRoomsRequest struct {
-	Host        string    `json:"host"`
-	Title       string    `json:"title"`
-	Description string    `json:"description"`
-	Phase       RoomPhase `json:"phase"`
+	Keyword string `json:"keyword"`
 }
