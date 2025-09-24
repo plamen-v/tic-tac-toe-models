@@ -42,6 +42,11 @@ type Room struct {
 
 type GamePhase int
 
+const (
+	GamePhaseGamePhaseInProgress GamePhase = 0
+	GamePhaseGamePhaseCompleted  GamePhase = 1
+)
+
 type GamePlayer struct {
 	ID   uuid.UUID `json:"id"`
 	Mark string    `json:"mark"`
