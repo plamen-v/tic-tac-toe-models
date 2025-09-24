@@ -43,8 +43,8 @@ type Room struct {
 type GamePhase int
 
 const (
-	GamePhaseGamePhaseInProgress GamePhase = 0
-	GamePhaseGamePhaseCompleted  GamePhase = 1
+	GamePhaseInProgress GamePhase = 0
+	GamePhaseCompleted  GamePhase = 1
 )
 
 type GamePlayer struct {
