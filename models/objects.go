@@ -1,12 +1,14 @@
 package models
 
+import "github.com/gofrs/uuid"
+
 type Player struct {
-	ID       int64       `json:"id"`
+	ID       uuid.UUID   `json:"id"`
 	Login    string      `json:"login"`
 	Password string      `json:"-"`
 	Nickname string      `json:"nickname"`
 	Stats    PlayerStats `json:"stats"`
-	RoomID   *int64      `json:"roomId"`
+	RoomID   *uuid.UUID  `json:"roomId"`
 }
 
 type PlayerStats struct {
@@ -22,41 +24,35 @@ const (
 	RoomPhaseFull RoomPhase = 1
 )
 
-type RoomParticipant struct {
-	ID       int64  `json:"id"`
-	Nickname string `json:"nickname"`
-	Continue bool   `json:"-"`
+type RoomPlayer struct {
+	ID             uuid.UUID `json:"id"`
+	Nickname       string    `json:"nickname"`
+	RequestNewGame bool      `json:"-"`
 }
 
 type Room struct {
-	Host        RoomParticipant  `json:"host"`
-	Guest       *RoomParticipant `json:"guest"`
-	GameID      *int64           `json:"gameId"`
-	Title       string           `json:"title"`
-	Description string           `json:"description"`
-	Phase       RoomPhase        `json:"phase"`
+	ID          uuid.UUID   `json:"id"`
+	Host        RoomPlayer  `json:"host"`
+	Guest       *RoomPlayer `json:"guest"`
+	GameID      *uuid.UUID  `json:"gameId"`
+	Title       string      `json:"title"`
+	Description string      `json:"description"`
+	Phase       RoomPhase   `json:"phase"`
 }
 
 type GamePhase int
 
-const (
-	GamePhaseInProgress GamePhase = 0
-	GamePhaseCompleted  GamePhase = 1
-)
-
-type GamePlayer struct { //todo!
-	ID   int64
-	Mark rune
+type GamePlayer struct {
+	ID   uuid.UUID `json:"id"`
+	Mark string    `json:"mark"`
 }
 
 type Game struct {
-	ID              int64
-	HostID          int64
-	HostMark        string
-	GuestID         int64
-	GuestMark       string
-	CurrentPlayerID int64
-	Board           string
-	WinnerID        *int64
-	Phase           GamePhase
+	ID              uuid.UUID  `json:"id"`
+	Host            GamePlayer `json:"host"`
+	Guest           GamePlayer `json:"guest"`
+	CurrentPlayerID uuid.UUID  `json:"currentPlayerId"`
+	Board           string     `json:"board"`
+	WinnerID        *uuid.UUID `json:"winnerId"`
+	Phase           GamePhase  `json:"phase"`
 }
