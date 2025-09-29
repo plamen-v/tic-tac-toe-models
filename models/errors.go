@@ -14,18 +14,6 @@ const (
 const InternalServerErrorMessage string = "Internal server error"
 const AuthorizationErrorMessage string = "Access Denied"
 
-type ErrorMessage struct {
-	Code    string `json:"error_code"`
-	Message string `json:"error_message"`
-}
-
-func NewErrorMessage(code string, message string) *ErrorMessage {
-	return &ErrorMessage{
-		Code:    code,
-		Message: message,
-	}
-}
-
 type NotFoundError struct {
 	Message string
 }

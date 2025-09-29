@@ -8,7 +8,6 @@ type Player struct {
 	Password string      `json:"-"`
 	Nickname string      `json:"nickname"`
 	Stats    PlayerStats `json:"stats"`
-	RoomID   *uuid.UUID  `json:"roomId"`
 }
 
 type PlayerStats struct {
