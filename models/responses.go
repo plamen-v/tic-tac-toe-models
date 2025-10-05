@@ -13,7 +13,11 @@ type LoginResponse struct {
 	Player *Player `json:"player"`
 }
 
-type OpenRoomsResponse struct {
+type RoomResponse struct {
+	Room *Room `json:"room"`
+}
+
+type RoomListResponse struct {
 	Rooms []*Room `json:"rooms"`
 }
 
@@ -21,7 +25,7 @@ type CreateRoomResponse struct {
 	RoomID uuid.UUID `json:"roomId"`
 }
 
-type GameStateResponse struct {
+type GameResponse struct {
 	Game *Game `json:"game"`
 }
 
