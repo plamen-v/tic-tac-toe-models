@@ -18,7 +18,8 @@ type RoomResponse struct {
 }
 
 type RoomListResponse struct {
-	Rooms []*Room `json:"rooms"`
+	Rooms    []*Room  `json:"rooms"`
+	PageInfo PageInfo `json:"pageInfo"`
 }
 
 type CreateRoomResponse struct {
@@ -29,6 +30,7 @@ type GameResponse struct {
 	Game *Game `json:"game"`
 }
 
-type RankResponse struct {
-	Players []*Player `json:"players"`
+type RankingResponse struct {
+	Players  []*Player `json:"players"`
+	PageInfo PageInfo  `json:"pageInfo"`
 }
