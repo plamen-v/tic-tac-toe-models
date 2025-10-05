@@ -60,9 +60,3 @@ type Game struct {
 	WinnerID        *uuid.UUID `json:"winnerId"`
 	Phase           GamePhase  `json:"phase"`
 }
-
-type PageInfo struct {
-	PageSize int `json:"pageSize"`
-	Page     int `json:"page"`
-	TotalCnt int `json:"totalCnt"`
-}

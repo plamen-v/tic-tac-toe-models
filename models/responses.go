@@ -34,3 +34,9 @@ type RankingResponse struct {
 	Players  []*Player `json:"players"`
 	PageInfo PageInfo  `json:"pageInfo"`
 }
+
+type PageInfo struct {
+	PageSize int `json:"pageSize"`
+	Page     int `json:"page"`
+	TotalCnt int `json:"totalCnt"`
+}
